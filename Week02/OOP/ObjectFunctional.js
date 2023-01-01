@@ -1,3 +1,4 @@
+// Object creation using builder method
 const Car = (name, model) => {
   return {
     name: name,
@@ -7,11 +8,6 @@ const Car = (name, model) => {
     }
   };
 };
-
-// {
-//         name,
-//         model,
-// }
 
 const car02 = Car('Toyota', 'Hilux');
 car02.displayName();

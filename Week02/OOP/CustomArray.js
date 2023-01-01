@@ -13,8 +13,8 @@ class CustomArray {
 
 
 const newData = new CustomArray([10, 20, 30, 40]);
-
 console.log(newData.data);
+
 newData.map((i) => i + 50);
 console.log(newData.data);
 

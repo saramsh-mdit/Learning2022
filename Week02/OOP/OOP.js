@@ -14,6 +14,7 @@ class Rectangle extends Shape {
   }
 }
 
+// Inheritance
 class Square extends Shape {
   length;
   constructor(length) {
