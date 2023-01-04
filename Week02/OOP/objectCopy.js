@@ -1,28 +1,25 @@
-// Copy Object using spread operator // Partial Copy
-const object = {
-    data: 100,
-    person: {
-        name: "Samip",
-        secondName:"Nripesh"
+const obj1 = {
+    name: "something",
+    data: {
+        value:1600
+    },
+    getData() {
+        return this.name
     }
-};
-// const objectTwo = {...object, person:{...object.person}};
-// // const objectTwo = object;
+}
 
-// console.log('\n', object, '\n', objectTwo);
-
-// object.data = 2500;
-// object.person.name = 2500;
-
-// console.log('\n', object, '\n', objectTwo);
+// const obj2 = { ...obj1, data: {...obj1.data}};
+const obj2 = JSON.parse(JSON.stringify(obj1));
 
 
-// Fully Copy
+console.log("Before");
+console.log("obj1",obj1);
+console.log("obj2",obj2);
 
-const objectTwo = Object.create(object);
-console.log('\n', object, '\n', objectTwo);
+obj1.name = "new something";
+obj1.data.value = "HAHAHa"
 
-object.data = 2500;
-object.person.name = 2500;
+console.log('After');
 
-console.log('\n', object, '\n', objectTwo);
+console.log("obj1",obj1);
+console.log("obj2",obj2);

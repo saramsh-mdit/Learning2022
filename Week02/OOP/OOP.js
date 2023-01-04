@@ -24,7 +24,11 @@ class Square extends Shape {
   }
 }
 
+
+
 const sq1 = new Square(15);
+
+
 sq1.calculateArea();
 console.log(sq1.Area);
 
