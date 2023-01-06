@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>MDIT</title>
+</head>
+<body>
+    <main class="my-32 grid max-w-2xl mx-auto gap-8 justify-center">
+        <h1 id="currrentTime" class="text-6xl text-center">
+            00:00:00</h1>
+        <div class="flex gap-4">
+            <button id="startBtn"  class="px-6 py-2 border-gray-200 font-semibold bg-gray-50 hover:bg-green-600 hover:text-white rounded-full border">start</button>
+            <button id="stopBtn" class="px-6 py-2 border-gray-200 font-semibold bg-gray-50 hover:bg-green-600 hover:text-white rounded-full border">stop</button>
+            <button id="restBtn" class="px-6 py-2 border-gray-200 font-semibold bg-gray-50 hover:bg-green-600 hover:text-white rounded-full border">reset</button>
+            <button id="lapBtn" class="px-6 py-2 border-gray-200 font-semibold bg-gray-50 hover:bg-green-600 hover:text-white rounded-full border">lap</button>
+        </div>
+
+        <div class="lapList">
+
+        </div>
+    </main>
+
+    <script src="./index.js"></script>
+    </body>
+</html>
