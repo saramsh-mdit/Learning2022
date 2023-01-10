@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="max-w-xl mx-auto p-4">
+
+      <h2 class="text-gray-800 text-2xl py-4 font-bold text-center">JS WIZZ</h2>
+
+      <div class="flex gap-4 items-streach">
+        <input 
+        placeholder="Task Name"
+        class="rounded border p-2 w-full" type="text" id="userInput" />
+        
+        <button class="rounded bg-gray-800 text-gray-100 px-8 py-2" id="addBtn">
+          Add
+        </button>
+      </div>
+
+      <section class="grid gap-4 w-full justify-items-center mt-4">
+        <h2 class="text-xl font-semibold">To Do List</h2>
+        
+        <div id="todo-list" class="grid w-full gap-2">
+            <!-- <li class="flex justify-between border p-4 rounded text-gray-700">
+                <div class="flex items-center gap-4">
+                    <input type="checkbox" class="w-5 h-5">
+                    <p class="text-xl font-semibold">Title</p>
+                </div>
+                <div class="flex gap-6 font-semibold">
+                    <button class="text-blue-400">edit</button>
+                    <button class="text-red-400">delete</button>
+                </div>
+            </li> -->
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/toDoCore.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
