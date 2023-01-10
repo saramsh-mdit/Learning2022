@@ -1,0 +1,15 @@
+{
+  "name": "ToDo",
+  "version": "1.0.0",
+  "description": "1. Create an array\r     List: {title,date,isChecked}\r Features\r - Create\r - Update (Edit)\r - Delete",
+  "main": "./js/index.js",
+  "scripts": {
+    "dev":"tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}

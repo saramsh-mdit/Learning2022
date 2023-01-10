@@ -1,45 +1,49 @@
+import { ToDo, Task } from "./toDoCore";
+
 const toDo = new ToDo();
 
 // State
 let isEdit = false;
-let editIndex;
+let editIndex:number | undefined;
 
-function editToggler(index) {
+function editToggler(index?:number) {
     isEdit = typeof (index) === 'number' ? true : false;
     editIndex = index ?? -1;
 }
 
 // DOM
-const userInput = document.querySelector("#userInput");
-const addBtn = document.querySelector("#addBtn")
-const toDoListDom = document.querySelector("#todo-list");
+const userInput:HTMLInputElement = document.querySelector("#userInput")!;
+const addBtn: HTMLButtonElement = document.querySelector("#addBtn")!;
+const toDoListDom:HTMLElement  = document.querySelector("#todo-list")!;
 
 // Event Handlers
-function deleteHandler(index) {
+function deleteHandler(index:number) {
     toDo.remove(index);
     renderList();
 }
 
-function editHandler(index) {
+function editHandler(index:number) {
     editToggler(index);
     renderList();
 }
 
 function editData() {
-    toDo.edit(new Task(userInput.value), editIndex);
-    userInput.value = "";
+    const inputData: string = userInput!.value! as string;
+    if(typeof(editIndex) ==="number")
+    toDo.edit(new Task(inputData), editIndex);
+    userInput!.value = "";
     editToggler();
     renderList();
 }
 
 function addHandler() {
-    if(!userInput.value) return
-    toDo.add(new Task(userInput.value));
-    userInput.value = "";
+    if(!userInput!.value) return
+    toDo.add(new Task(userInput!.value));
+    userInput!.value = "";
     renderList();
 }
 
-function checkboxHandler(index) {
+function checkboxHandler(index:number) {
     toDo.data[index].isChecked = !toDo.data[index].isChecked;
     renderList();
 }
@@ -47,11 +51,12 @@ function checkboxHandler(index) {
 // RENDER
 function renderList() {
     if (isEdit) {
-        addBtn.innerHTML = 'Update';
-        userInput.value = toDo.data[editIndex].title;
+        addBtn!.innerHTML = 'Update';
+        if(typeof(editIndex) === 'number')
+        userInput!.value = toDo.data[editIndex].title!;
     }
     else {
-        addBtn.innerHTML = 'Add';
+        addBtn!.innerHTML = 'Add';
     }
     let html = '';
     toDo.data?.forEach((item, index) => {
@@ -69,12 +74,12 @@ function renderList() {
             </li>
             `
     })
-    toDoListDom.innerHTML = html;
+    toDoListDom!.innerHTML = html;
 }
 
 renderList();
 
-addBtn.addEventListener('click', () => {
-    if (addBtn.innerHTML === 'Update') editData();
+addBtn!.addEventListener('click', () => {
+    if (addBtn!.innerHTML === 'Update') editData();
     else addHandler();
 })

@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "ts-dev": "tsc --watch",
+    "start": "./src/index.ts"
+  },
+  "dependencies": {
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
